@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CampusWallet - Reports</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="reports.css">
+</head>
+<body>
+  <header>
+    <h2>CampusWallet</h2>
+  </header>
+
+  <nav class="tabs">
+    <a href="index.html">Dashboard</a>
+    <a href="expenses.html">Expenses</a>
+    <a href="todo.html">To‑Do</a>
+    <a href="reports.html" class="active">Reports</a>
+  </nav>
+
+  <main>
+    <!-- Weekly summary card -->
+    <section class="card">
+      <h3>Weekly Report</h3>
+      <p id="reportSpend">Weekly spend: ₹0</p>
+      <p id="reportTasks">Tasks completed: 0</p>
+      <canvas id="reportChart"></canvas>
+    </section>
+
+    <!-- Daily trend card -->
+    <section class="card">
+      <h3>Daily Spending Trend</h3>
+      <canvas id="spendLineChart"></canvas>
+    </section>
+  </main>
+
+  <!-- Chart.js library -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Your reports logic -->
+  <script src="reports.js"></script>
+</body>
+</html>

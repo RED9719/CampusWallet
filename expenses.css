@@ -1,0 +1,131 @@
+:root {
+  --bg: #f8f4f0;
+  --text: #3e2c23;
+  --card: #fffaf5;
+  --accent: #7b4b3a;
+  --border: #d8c2b0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header {
+  padding: 16px 24px;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+
+header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+
+nav.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 12px;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+nav.tabs a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+nav.tabs a:hover,
+nav.tabs a.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  width: 100%;
+  max-width: 420px;
+  box-sizing: border-box;
+}
+
+.card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+button:hover {
+  opacity: 0.9;
+}
+
+#expenseList {
+  list-style: none;
+  padding: 0;
+  margin-top: 16px;
+}
+
+#expenseList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background: var(--bg);
+}
+
+#expenseList button {
+  background: crimson;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#expenseTotal {
+  font-weight: 600;
+  margin-top: 16px;
+  text-align: right;
+  font-size: 16px;
+}

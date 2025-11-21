@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CampusWallet - To‑Do</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="todo.css">
+</head>
+<body>
+  <header>
+    <h2>CampusWallet</h2>
+  </header>
+
+  <nav class="tabs">
+    <a href="index.html">Dashboard</a>
+    <a href="expenses.html">Expenses</a>
+    <a href="todo.html" class="active">To‑Do</a>
+    <a href="reports.html">Reports</a>
+  </nav>
+
+
+  <main>
+  <section class="card">
+    <h3>To‑Do List</h3>
+    <input id="taskTitle" type="text" placeholder="Task">
+    <input id="taskDue" type="date">
+    <button id="addTask">Add Task</button>
+    <ul id="taskList"></ul>
+    <p id="taskCounter">Completed: 0 / Total: 0</p>
+  </section>
+</main>
+
+  <script src="todo.js"></script>
+</body>
+</html>

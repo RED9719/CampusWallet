@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusWallet - Expenses</title>
+  <link rel="stylesheet" href="expenses.css">
+</head>
+<body>
+  <header>
+    <h2>CampusWallet</h2>
+  </header>
+
+  <nav class="tabs">
+    <a href="index.html">Dashboard</a>
+    <a href="expenses.html" class="active">Expenses</a>
+    <a href="todo.html">To‑Do</a>
+    <a href="reports.html">Reports</a>
+  </nav>
+
+  <main>
+    <section class="card">
+      <h3>Expenses</h3>
+      <input id="expenseTitle" type="text" placeholder="Title">
+      <input id="expenseAmount" type="number" placeholder="Amount">
+      <button id="addExpense">Add Expense</button>
+      <ul id="expenseList"></ul>
+      <p id="expenseTotal">Total: ₹0</p>
+    </section>
+  </main>
+
+  <script src="expenses.js"></script>
+</body>
+</html>
