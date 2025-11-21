@@ -1,0 +1,89 @@
+
+body {
+margin: 0;
+font-family: sans-serif;
+display: flex;
+height: 100vh;
+background: #f7f7f7;
+}
+
+
+/* Sidebar */
+#sidebar {
+width: 240px;
+background: #ffffff;
+border-right: 1px solid #ddd;
+padding: 16px;
+overflow-y: auto;
+}
+#sidebar h2 {
+font-size: 16px;
+margin-bottom: 8px;
+}
+.page-item {
+padding: 8px;
+border-radius: 6px;
+cursor: pointer;
+}
+.page-item:hover {
+background: #eee;
+}
+
+
+/* Main */
+#main {
+flex: 1;
+display: flex;
+flex-direction: column;
+}
+
+
+/* Topbar */
+#topbar {
+height: 60px;
+background: #fff;
+border-bottom: 1px solid #ddd;
+display: flex;
+align-items: center;
+padding: 0 16px;
+justify-content: space-between;
+}
+
+
+/* Editor */
+#editor {
+flex: 1;
+padding: 30px;
+overflow-y: auto;
+}
+
+
+.block {
+margin: 8px 0;
+padding: 4px;
+outline: none;
+min-height: 20px;
+}
+
+
+.heading {
+font-size: 22px;
+font-weight: bold;
+}
+
+
+.paragraph {
+font-size: 16px;
+}
+
+
+.todo {
+display: flex;
+gap: 10px;
+align-items: center;
+}
+
+
+.toolbar {
+margin-top: 20px;
+}
