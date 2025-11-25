@@ -35,6 +35,19 @@
       <p id="expenseTotal">Total: ₹0</p>
     </section>
   </main>
+  <script>
+    // Highlight the active tab based on current page
+    const currentPage = window.location.pathname.split("/").pop();
+    const tabs = document.querySelectorAll("nav.tabs a");
+
+    tabs.forEach(tab => {
+      if (tab.getAttribute("href") === currentPage) {
+        tab.classList.add("active");
+      } else {
+        tab.classList.remove("active");
+      }
+    });
+  </script>
 
   <script src="expenses.js"></script>
 </body>

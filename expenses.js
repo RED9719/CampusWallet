@@ -18,11 +18,18 @@ function renderExpenses() {
   expenses.forEach((exp, i) => {
     total += exp.amount;
     const li = document.createElement('li');
+    li.className = "expense-item";
+
     li.innerHTML = `
-      <span>${exp.title} (Date: ${exp.date})</span>
-      <div>
-        <strong>₹${exp.amount}</strong>
-        <button onclick="deleteExpense(${i})">X</button>
+      <div class="expense-content">
+        <span><strong>${exp.title}</strong> (Date: ${exp.date})</span>
+        <div>
+          <strong>₹${exp.amount}</strong>
+        </div>
+      </div>
+      <div class="expense-actions">
+        <button onclick="editExpense(${i})">Edit</button>
+        <button onclick="deleteExpense(${i})">Delete</button>
       </div>
     `;
     expenseList.appendChild(li);
@@ -35,6 +42,33 @@ function renderExpenses() {
 function deleteExpense(index) {
   expenses.splice(index, 1);
   renderExpenses();
+}
+
+function editExpense(index) {
+  const li = expenseList.children[index];
+  const exp = expenses[index];
+
+  li.innerHTML = `
+    <input type="text" id="editTitle${index}" value="${exp.title}" />
+    <input type="number" id="editAmount${index}" value="${exp.amount}" />
+    <div class="expense-actions">
+      <button onclick="saveEdit(${index})">Save</button>
+      <button onclick="renderExpenses()">Cancel</button>
+    </div>
+  `;
+}
+
+function saveEdit(index) {
+  const newTitle = document.getElementById(`editTitle${index}`).value.trim();
+  const newAmount = parseFloat(document.getElementById(`editAmount${index}`).value);
+
+  if (newTitle && !isNaN(newAmount)) {
+    expenses[index].title = newTitle;
+    expenses[index].amount = newAmount;
+    expenses[index].date = new Date().toISOString().slice(0, 10);
+    saveExpenses();
+    renderExpenses();
+  }
 }
 
 addExpenseBtn.addEventListener('click', () => {

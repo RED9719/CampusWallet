@@ -20,7 +20,7 @@
     <a href="reports.html">Reports</a>
 
     <a href="resources.html">Resources</a>
-    <a href="notes.html" >Notes</a>
+    <a href="notes.html">Notes</a>
     <a href="signup.html">Sign Up</a>
     <a href="login.html">Login</a>
   </nav>
@@ -40,6 +40,20 @@
       <canvas id="spendLineChart"></canvas>
     </section>
   </main>
+
+  <script>
+    // Highlight the active tab based on current page
+    const currentPage = window.location.pathname.split("/").pop();
+    const tabs = document.querySelectorAll("nav.tabs a");
+
+    tabs.forEach(tab => {
+      if (tab.getAttribute("href") === currentPage) {
+        tab.classList.add("active");
+      } else {
+        tab.classList.remove("active");
+      }
+    });
+  </script>
 
   <!-- Chart.js library -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
