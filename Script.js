@@ -77,3 +77,27 @@ document.getElementById('longBreak').addEventListener('click', longBreak);
 // Init
 updateDisplay();
 sessionCount.textContent = `Sessions completed: ${sessionsCompleted}`;
+
+
+function updateDashboard() {
+  // Load tasks
+  let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+  let completedTasks = tasks.filter(t => t.completed).length;
+
+  // Load expenses
+  let expenses = JSON.parse(localStorage.getItem('expenses')) || [];
+  let today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+  let todaySpend = expenses
+    .filter(exp => exp.date?.startsWith(today))
+    .reduce((sum, exp) => sum + exp.amount, 0);
+
+  // Update UI
+  document.getElementById('snapshotTasks').textContent = `Tasks completed: ${completedTasks}`;
+  document.getElementById('snapshotSpend').textContent = `Spent today: ₹${todaySpend}`;
+}
+
+// Initial render
+updateDashboard();
+
+// Listen for changes across tabs/pages
+window.addEventListener('storage', updateDashboard);

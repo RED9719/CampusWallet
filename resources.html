@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CampusWallet - Resources</title>
+    <link rel="stylesheet" href="resources.css">
+</head>
+
+<body>
+    <header>
+        <h2>CampusWallet</h2>
+    </header>
+
+    <nav class="tabs">
+        <a href="index.html">Dashboard</a>
+        <a href="expenses.html">Expenses</a>
+        <a href="todo.html">To‑Do</a>
+        <a href="reports.html">Reports</a>
+
+        <a href="resources.html">Resources</a>
+        <a href="notes.html" >Notes</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="login.html">Login</a>
+
+
+
+    </nav>
+
+    <main>
+      
+
+        <section class="card">
+            <h3>Curated Tools</h3>
+            <ul id="curatedList"></ul>
+        </section>
+
+        <section class="card">
+            <h3>Save Your Own</h3>
+            <input type="text" id="resourceTitle" placeholder="Title">
+            <input type="url" id="resourceURL" placeholder="Link">
+            <select id="resourceCategory">
+                <option>Study</option>
+                <option>Finance</option>
+                <option>Personal</option>
+            </select>
+            <button id="saveResource">Save</button>
+            <ul id="userList"></ul>
+        </section>
+    </main>
+
+    <script src="resources.js"></script>
+</body>
+
+</html>

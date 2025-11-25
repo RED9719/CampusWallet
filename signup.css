@@ -1,0 +1,104 @@
+/* signup.css */
+
+/* General page styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f5f2;
+  margin: 0;
+  padding: 0;
+  color: #3e2c23;
+}
+
+header {
+  background-color: #7b4b3a;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+/* Card container */
+.card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 320px;
+  text-align: center;
+}
+
+/* Form inputs */
+form input {
+  display: block;
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.6rem 0;
+  border: 1px solid #d8c2b0;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+/* Button */
+form button {
+  background-color: #7b4b3a;
+  color: #fff;
+  border: none;
+  padding: 0.8rem;
+  width: 100%;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background-color: #5a3528;
+}
+
+/* Links */
+.card a {
+  color: #7b4b3a;
+  text-decoration: none;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+/* Navigation bar styling */
+nav.tabs {
+  display: flex;
+  justify-content: center;   /* center the links */
+  background-color: #7b4b3a; /* CampusWallet theme color */
+  padding: 0.8rem;
+  border-bottom: 3px solid #d8c2b0;
+}
+
+/* Links inside nav */
+nav.tabs a {
+  color: #fff;               /* white text */
+  text-decoration: none;
+  margin: 0 1rem;            /* spacing between links */
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  padding-bottom: 0.2rem;
+}
+
+/* Hover effect */
+nav.tabs a:hover {
+  color: #d8c2b0;            /* lighter accent on hover */
+  border-bottom: 2px solid #d8c2b0;
+}
+
+/* Active tab */
+nav.tabs a.active {
+  color: #d8c2b0;
+  border-bottom: 2px solid #fff;
+}
