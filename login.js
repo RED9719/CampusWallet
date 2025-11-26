@@ -1,29 +1,29 @@
-document.getElementById('loginForm').addEventListener('submit', e => {
+document.getElementById('loginForm').addEventListener('submit', async e => {
   e.preventDefault();
   const email = document.getElementById('loginEmail').value;
   const password = document.getElementById('loginPassword').value;
 
-  let users = JSON.parse(localStorage.getItem('users')) || [];
-  const user = users.find(u => u.email === email && u.password === password);
+  try {
+    const res = await fetch('/api/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    });
 
-  if (user) {
-    alert(`Welcome back, ${user.username}!`);
-    window.location.href = "../index.html"; // go to dashboard
-  } else {
-    alert("Invalid credentials. Try again.");
-  }
-});document.getElementById('loginForm').addEventListener('submit', e => {
-  e.preventDefault();
-  const email = document.getElementById('loginEmail').value;
-  const password = document.getElementById('loginPassword').value;
+    const data = await res.json();
+    if (!res.ok) {
+      alert(data.message || 'Login failed');
+      return;
+    }
 
-  let users = JSON.parse(localStorage.getItem('users')) || [];
-  const user = users.find(u => u.email === email && u.password === password);
+    // Save token and user to localStorage for frontend usage
+    localStorage.setItem('token', data.token);
+    localStorage.setItem('user', JSON.stringify(data.user));
 
-  if (user) {
-    alert(`Welcome back, ${user.username}!`);
-    window.location.href = "../index.html"; // go to dashboard
-  } else {
-    alert("Invalid credentials. Try again.");
+    alert(`Welcome back, ${data.user.username}!`);
+    window.location.href = "../index.html";
+  } catch (err) {
+    console.error(err);
+    alert('Login error');
   }
 });
